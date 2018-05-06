@@ -1,5 +1,10 @@
 @import 'variables';
 
+/*
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'IBM Plex Sans Condensed', sans-serif;
+*/
+
 html,
 body {
   background-color: $backgroundColor;
@@ -39,7 +44,8 @@ body {
   z-index: 1;
 
   &:hover ~ .slide-2 {
-    right: -161%;
+    // right: -161%;
+    right: -120%;
   }
 }
 .slide-1__bg {
@@ -54,11 +60,36 @@ body {
   z-index: 2;
 
   &:hover {
-    right: 0%;
+    // right: 0%;
+    right: -40%;
   }
 }
 .slide-2__bg {
   background: url('images/Strike.jpg') right bottom no-repeat fixed;
   transform-origin: bottom right;
   transform: skew(55deg, 0deg);
+}
+
+.slide-1-content,
+.slide-2-content {
+  position: absolute;
+  top:5%;
+  color: #fff;
+  z-index: 3;
+}
+.slide-content__title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+}
+.slide-content__text {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .35);
+}
+
+.slide-1-content {
+  left:5%;
+}
+.slide-2-content {
+  right: 5%;
 }
