@@ -20,7 +20,7 @@ body {
 .slide-1,
 .slide-2 {
   position: absolute;
-  width: 120%;
+  width: 160%;
   height: 100%;
   transition: all 250ms ease-in-out;
   overflow: hidden;
@@ -29,39 +29,36 @@ body {
 .slide-1__bg,
 .slide-2__bg {
   position: absolute;
-  width:100%;
+  width:120%;
   height:400px;
-  // background-position: center top;
-  // background-repeat: no-repeat;
-  // background-attachment: fixed;
-  // background-size: cover;
   overflow: hidden;
+  background-size: cover;
 }
 
 .slide-1 {
   z-index: 1;
 
   &:hover ~ .slide-2 {
-    right: -60%;
+    right: -161%;
   }
 }
 .slide-1__bg {
-  background: url('images/armor-warlock-desktop.jpg') 130% top no-repeat fixed;
+  background: url('images/lord-g-1440.jpg') left top no-repeat fixed;
 }
 
 .slide-2 {
-  right:-40%;
+  right:-80%;
   border-left: 10px solid rgba(0, 165, 255, .85);
   transform-origin: bottom right;
   transform: skew(-55deg, 0deg);
   z-index: 2;
 
   &:hover {
-    right: -20%;
+    right: 0%;
   }
 }
 .slide-2__bg {
-  background: url('images/WC_BG_1440.jpg') right bottom no-repeat fixed;
+  background: url('images/Strike.jpg') right bottom no-repeat fixed;
+  transform-origin: bottom right;
   transform: skew(55deg, 0deg);
-  left:-300px;
 }
