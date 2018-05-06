@@ -6,6 +6,7 @@ body {
 }
 
 .stage {
+  position: relative;
   width: 1000px;
   height: 400px;
   background-color: #fff;
@@ -14,25 +15,38 @@ body {
   overflow: hidden;
 }
 
-.slide-1 {
-  position: relative;
+.slide-1,
+.slide-2 {
+  position: absolute;
   width: 120%;
   height: 100%;
-  left:-100%;
-  border: 1px solid #000;
-  // clip-path: polygon(0 0, 100% 0, 45% 100%, 0% 100%);
-  transform-origin: bottom left;
-  transform: skew(-55deg, 0deg);
   overflow: hidden;
 }
-.slide-1__bg {
-  $posPercent: -25%;
+.slide-1__bg,
+.slide-2__bg {
+  $slideImagePosPercent: -25%;
   position: absolute;
-  top: $posPercent;
-  left: $posPercent;
-  right: $posPercent;
-  bottom: $posPercent;
+  top: $slideImagePosPercent;
+  left: $slideImagePosPercent;
+  right: $slideImagePosPercent;
+  bottom: $slideImagePosPercent;
+  overflow: hidden;
+}
+.slide-1 {
+  left:-100%;
+  transform-origin: bottom left;
+  transform: skew(-55deg, 0deg);
+}
+.slide-1__bg {
   background-image: url('images/armor-warlock-desktop.jpg');
   transform: skew(55deg, 0deg);
-  overflow: hidden;
+}
+.slide-2 {
+  right:-40%;
+  transform-origin: bottom right;
+  transform: skew(-55deg, 0deg);
+}
+.slide-2__bg {
+  background-image: url('images/overview_hero.jpg');
+  transform: skew(55deg, 0deg);
 }
