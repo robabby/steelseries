@@ -3,6 +3,7 @@
 html,
 body {
   background-color: $backgroundColor;
+  margin: 0;
 }
 
 .stage {
@@ -11,8 +12,9 @@ body {
   height: 400px;
   background-color: #fff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, .1);
-  margin: 0 auto;
+  margin: 2rem auto 0;
   overflow: hidden;
+  z-index: 0;
 }
 
 .slide-1,
@@ -20,33 +22,46 @@ body {
   position: absolute;
   width: 120%;
   height: 100%;
+  transition: all 250ms ease-in-out;
   overflow: hidden;
 }
+
 .slide-1__bg,
 .slide-2__bg {
-  $slideImagePosPercent: -25%;
   position: absolute;
-  top: $slideImagePosPercent;
-  left: $slideImagePosPercent;
-  right: $slideImagePosPercent;
-  bottom: $slideImagePosPercent;
+  width:100%;
+  height:400px;
+  // background-position: center top;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: cover;
   overflow: hidden;
 }
+
 .slide-1 {
-  left:-100%;
-  transform-origin: bottom left;
-  transform: skew(-55deg, 0deg);
+  z-index: 1;
+
+  &:hover ~ .slide-2 {
+    right: -60%;
+  }
 }
 .slide-1__bg {
-  background-image: url('images/armor-warlock-desktop.jpg');
-  transform: skew(55deg, 0deg);
+  background: url('images/armor-warlock-desktop.jpg') 130% top no-repeat fixed;
 }
+
 .slide-2 {
   right:-40%;
+  border-left: 10px solid rgba(0, 165, 255, .85);
   transform-origin: bottom right;
   transform: skew(-55deg, 0deg);
+  z-index: 2;
+
+  &:hover {
+    right: -20%;
+  }
 }
 .slide-2__bg {
-  background-image: url('images/overview_hero.jpg');
+  background: url('images/WC_BG_1440.jpg') right bottom no-repeat fixed;
   transform: skew(55deg, 0deg);
+  left:-300px;
 }
