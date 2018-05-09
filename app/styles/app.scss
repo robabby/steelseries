@@ -11,7 +11,7 @@ body {
   margin: 0;
 }
 
-.stage {
+.super-stage {
   position: relative;
   width: 1000px;
   height: 400px;
@@ -45,7 +45,11 @@ body {
 
   &:hover ~ .slide-2 {
     // right: -161%;
-    right: -120%;
+    right: -100%;
+  }
+  &:hover ~ .slide-1-content {
+    opacity: 1;
+    left: 5%;
   }
 }
 .slide-1__bg {
@@ -61,11 +65,16 @@ body {
 
   &:hover {
     // right: 0%;
-    right: -40%;
+    right: -65%;
+
+  }
+  &:hover ~ .slide-2-content {
+    opacity: 1;
+    right: 5%;
   }
 }
 .slide-2__bg {
-  background: url('images/Strike.jpg') right bottom no-repeat fixed;
+  background: url('images/Strike.jpg') right top no-repeat fixed;
   transform-origin: bottom right;
   transform: skew(55deg, 0deg);
 }
@@ -75,7 +84,9 @@ body {
   position: absolute;
   top:5%;
   color: #fff;
+  opacity: 0;
   z-index: 3;
+  transition: all 250ms ease-in-out;
 }
 .slide-content__title {
   font-family: 'IBM Plex Sans', sans-serif;
@@ -88,8 +99,8 @@ body {
 }
 
 .slide-1-content {
-  left:5%;
+  left: 0%;
 }
 .slide-2-content {
-  right: 5%;
+  right: 0%;
 }
