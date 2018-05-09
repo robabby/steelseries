@@ -52,10 +52,6 @@ body {
     left: 5%;
   }
 }
-.slide-1__bg {
-  background: url('images/lord-g-1440.jpg') left top no-repeat fixed;
-}
-
 .slide-2 {
   right:-80%;
   border-left: 10px solid rgba(0, 165, 255, .85);
@@ -73,6 +69,10 @@ body {
     right: 5%;
   }
 }
+
+.slide-1__bg {
+  background: url('images/lord-g-1440.jpg') left top no-repeat fixed;
+}
 .slide-2__bg {
   background: url('images/Strike.jpg') right top no-repeat fixed;
   transform-origin: bottom right;
@@ -87,6 +87,10 @@ body {
   opacity: 0;
   z-index: 3;
   transition: all 250ms ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 .slide-content__title {
   font-family: 'IBM Plex Sans', sans-serif;
@@ -100,7 +104,25 @@ body {
 
 .slide-1-content {
   left: 0%;
+
+  &:hover {
+    left: 5%;
+    opacity: 1;
+
+    & ~ .slide-2 {
+      right: -100%;
+    }
+  }
 }
 .slide-2-content {
   right: 0%;
+
+  &:hover {
+    right: 5%;
+    opacity: 1;
+
+  }
+  &:hover ~ .slide-2 {
+    right: -65%;
+  }
 }
